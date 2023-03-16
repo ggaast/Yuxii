@@ -6,7 +6,7 @@ Warning! Nothing is done yet.
 
 # *Getting started:*
 
-## Nodes
+### Nodes
 
 In Yuxii Node is a logic and a scene at once.
 
