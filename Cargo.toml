@@ -17,8 +17,6 @@ members = ["crates/*"]
 
 [dependencies]
 neecs_derive = {path = "crates/neecs_derive", version = "0.1.0"}
-neecs = {path = "crates/neecs", version = "0.1.0"}
-#yuxii = {path = "crates/yuxii"}
 static_init = "1.0.3"
 idalloc = "0.1.1"
 indexmap = "1.9.2"
