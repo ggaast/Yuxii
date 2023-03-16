@@ -11,12 +11,9 @@ keywords = ["games", "engine", "3d", "ecs"]
 description = "ECS-based 3D game engine"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
-[workspace]
-
-members = ["crates/*"]
 
 [dependencies]
-neecs_derive = {path = "crates/neecs_derive", version = "0.1.0"}
+yuxii_macros = "0.1.0"
 static_init = "1.0.3"
 idalloc = "0.1.1"
 indexmap = "1.9.2"

@@ -19,7 +19,7 @@ pub use std::ops::{Add, Sub, Shl, BitXor, Not};
 pub use node::{*, Node, Spawner};
 pub use entity::{Entity};
 pub use yuxii::Yuxii;
-pub use neecs_derive::{Resource, Component, Bundle, system, query};
+pub use yuxii_macros::{Resource, Component, Bundle, system, query};
 pub use default_res::*;
 pub use core::fmt::Display;
 pub use scene::{Scene, ExportedModifier, Modifier, SEntity, SNode};
