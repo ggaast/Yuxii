@@ -1,4 +1,4 @@
-use neecs_derive::Component;
+use yuxii_macros::Component;
 use serde::{Serialize, Deserialize};
 use crate::*;
 
