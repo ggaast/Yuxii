@@ -45,6 +45,9 @@ fn main(){
     // We can also spawn this node content:
     MyNode::spawn();
 
+    // Run
+    Yuxii::run();
+
 }
 ```
 ### Structure of the node looks like this:
@@ -53,5 +56,91 @@ fn main(){
         resources.rs
         scene.ron
         systems.rs
+
+### Systems
+
+You can easily add system from any part of your project, but after `Yuxii::run()`
+
+```rust
+#[system]
+fn my_system(){ /* do something */ }
+```
+
+and add it:
+```rust
+fn frame(&self){
+    my_system();
+}
+```
+
+### Queries
+
+Queries are very powerfull in this engine (should be, not yet)
+Lets get into example:
+```rust
+#[system]
+fn my_system(){
+    // This query will be removed by macro and will not appear in docs
+    /// *GetMut, &GetRef, Added+, &OptionRef?
+    {
+        get_mut.field = "oh, hey";
+    }
+
+    // And we have even better parenting
+    /// Parent:: *GetMut
+    {
+        parent_get_mut.field = "looks easy";
+
+    }
+    // Custom naming
+    /// *[my_vel]Velocity
+    {
+        my_vel;
+    }
+}
+```
+
+## Resources
+
+### Components
+```rust
+#[derive(Component)]
+pub struct MyComponent{
+    /// def 9
+    pub field: i32,
+    /// def "Hello World"
+    pub private: String
+}
+```
+
+It will automatically implement Default according to docs attributes.
+
+Add component:
+```rust
+let entity = World::spawn();
+
+entity << MyComponent{ field: 65, ..default() };
+```
+### Globals
+
+```rust
+#[derive(Global)]
+pub struct MyGlobal{
+    /// def "It is global" 
+    pub info: String
+}
+```
+globals instances are automatically adding to the world at their definition. It means, you can access it after its definition.
+
+```rust
+fn system(){
+    let lock = MyGlobal::read();
+
+    log << "MyGlobal info: " << lock.info;
+}
+```
+
+### Signals
+
 
 todo!();
