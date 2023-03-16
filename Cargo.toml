@@ -1,0 +1,32 @@
+[package]
+name = "yuxii"
+version = "0.0.1"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[workspace]
+
+members = ["crates/*"]
+
+[dependencies]
+neecs_derive = {path = "crates/neecs_derive"}
+neecs = {path = "crates/neecs"}
+#yuxii = {path = "crates/yuxii"}
+static_init = "1.0.3"
+idalloc = "0.1.1"
+indexmap = "1.9.2"
+go-spawn = "0.1.2"
+easy_collections = "0.3.2"
+rand = "0.8.5"
+hashbrown = "0.13.2"
+ron = "0.8.0"
+serde = "1.0.152"
+erased-serde = "0.3"
+colored = "2.0.0"
+typetag = "0.2.5"
+relative-path = "1.7.3"
+async-trait = "0.1.64"
+tokio = "1.25.0"
+bevy_reflect = "0.9.1"
+
